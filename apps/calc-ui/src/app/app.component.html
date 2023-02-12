@@ -1,1 +1,76 @@
-<hedgeserv-calc-nx-welcome></hedgeserv-calc-nx-welcome>
+<div class="root">
+  <div class="calc">
+    <div class="expr">
+      <ng-container *ngIf="expr">
+        {{ expr.left | number : '1.0-7' }} {{ expr.op }}
+        {{ expr.right | number : '1.0-7' }}
+        {{ expr.right ? '=' : '' }}
+      </ng-container>
+    </div>
+    <div class="current-entry">
+      {{ currentEntry || (result | number : '1.0-7') }}
+    </div>
+    <div class="grid">
+      <hedgeserv-calc-button (click)="onClearClick()">
+        C
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onChangeSignClick()">
+        +/-
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onPercentClick()">
+        %
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onOperationClick('/')">
+        /
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(7)">
+        7
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(8)">
+        8
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(9)">
+        9
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onOperationClick('*')">
+        *
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(4)">
+        4
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(5)">
+        5
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(6)">
+        6
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onOperationClick('-')">
+        -
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(1)">
+        1
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(2)">
+        2
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(3)">
+        3
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onOperationClick('+')">
+        +
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onDelClick()">
+        del
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onNumberClick(0)">
+        0
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onDecimalClick()">
+        .
+      </hedgeserv-calc-button>
+      <hedgeserv-calc-button (click)="onResultClick()" [primary]="true">
+        =
+      </hedgeserv-calc-button>
+    </div>
+  </div>
+</div>

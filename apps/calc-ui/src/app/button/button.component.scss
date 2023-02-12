@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+
+@mixin hoverState($color) {
+  &:hover {
+    background-color: lighten($color, 5%);
+  }
+
+  &:active {
+    background-color: lighten($color, 10%);
+  }
+}
+
+.btn {
+  background: none;
+  border: none;
+
+  background-color: $secondary;
+  border-radius: 5px;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  @include hoverState($secondary);
+
+  &__primary {
+    background-color: $primary;
+
+    @include hoverState($primary);
+  }
+}
